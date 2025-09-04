@@ -2,6 +2,8 @@ package com.douglas.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,11 +18,12 @@ public class Usuario {
 	private Long id;
 
 	@Column(nullable = false)
-	private String name;
+	private String nome;
 
 	@Column(nullable = false)
 	private String email;
 
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	@Column(nullable = false)
 	private LocalDate dataCadastro;
 
@@ -32,12 +35,12 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public String getEmail() {
