@@ -20,11 +20,11 @@ public class ServicoUsuario {
 		return usuarioRepository.findAll();
 	}
 	
-	public Usuario cadastrar(Usuario usuario) {
+	public Usuario criarUsuario(Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
 	
-	public Usuario encontrarPorId(Long id) {
+	public Usuario buscarUsuarioPorId(Long id) {
 		Optional<Usuario> usuario = usuarioRepository.findById(id);
         if (usuario.isPresent()) {
             return usuario.get();

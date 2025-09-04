@@ -26,7 +26,7 @@ public class ControllerUsuario {
 	 @PostMapping
 	 public Usuario criarUsuario(@RequestBody Usuario usuario) {
 		 logger.info("Criando usuário: {}", usuario);
-		 Usuario usuarioCriado = servicoUsuario.cadastrar(usuario);
+		 Usuario usuarioCriado = servicoUsuario.criarUsuario(usuario);
 		 logger.info("Usuario criado: {}", usuario);
 		 return usuarioCriado;
 	 }
@@ -40,9 +40,9 @@ public class ControllerUsuario {
 	 }
 	 
 	    @GetMapping("/{id}")
-	    public Usuario buscarPorId(@PathVariable Long id) {
+	    public Usuario buscarUsuarioPorId(@PathVariable Long id) {
 	        logger.info("Buscando usuário com id: {} ", id);
-	        Usuario usuarios = servicoUsuario.encontrarPorId(id);
+	        Usuario usuarios = servicoUsuario.buscarUsuarioPorId(id);
 	        logger.info("Usuário encontrado: {}", usuarios);
 	        return usuarios;
 	    }
