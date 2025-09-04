@@ -3,6 +3,7 @@ package com.douglas.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,4 +38,13 @@ public class ControllerUsuario {
 		 logger.info("Encontrados {} usuários", usuarios.spliterator().getExactSizeIfKnown());
 		 return usuarios;
 	 }
+	 
+	    @GetMapping("/{id}")
+	    public Usuario buscarPorId(@PathVariable Long id) {
+	        logger.info("Buscando usuário com id: {} ", id);
+	        Usuario usuarios = servicoUsuario.encontrarPorId(id);
+	        logger.info("Usuário encontrado: {}", usuarios);
+	        return usuarios;
+	    }
+
 }
