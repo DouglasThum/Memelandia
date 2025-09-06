@@ -2,6 +2,8 @@ package com.douglas.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Usuario {
 	
 	private Long id;
@@ -10,6 +12,7 @@ public class Usuario {
 
 	private String email;
 
+	@JsonFormat(pattern = "dd-MM-yyyy")
 	private LocalDate dataCadastro;
 
 	public Long getId() {
