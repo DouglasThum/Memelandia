@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import com.douglas.repository.CategoriaMemeRepository;
 
 @SpringBootApplication
-@EnableFeignClients
 @EnableDiscoveryClient
+@EnableFeignClients
 @EnableJpaRepositories(basePackageClasses = CategoriaMemeRepository.class)
 public class CategoriamemeApplication {
 

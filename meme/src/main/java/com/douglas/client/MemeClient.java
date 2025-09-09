@@ -38,13 +38,13 @@ public class MemeClient {
 		return iCategoriaClient.encontrarCategoriaMemePorId(id);
 	}
 
-	@FeignClient(name = "categoria", url = "http://localhost:8081")
+	@FeignClient(name = "categoriameme", url = "http://localhost:8081")
 	interface ICategoriaClient {
-		@RequestMapping(value = "/categorias-meme", method = RequestMethod.GET)
+		@RequestMapping(value = "/categorias", method = RequestMethod.GET)
 		@ResponseBody
 		Iterable<CategoriaMeme> encontrarTodasCategoriasMemes();
 
-		@RequestMapping(value = "/categorias-meme/{id}", method = RequestMethod.GET)
+		@RequestMapping(value = "/categorias/{id}", method = RequestMethod.GET)
 		@ResponseBody
 		CategoriaMeme encontrarCategoriaMemePorId(@PathVariable("id") Long id);
 	}

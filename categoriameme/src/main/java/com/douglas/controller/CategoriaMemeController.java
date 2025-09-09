@@ -16,7 +16,7 @@ import com.douglas.entity.Usuario;
 import com.douglas.service.CategoriaMemeService;
 
 @RestController
-@RequestMapping("/categoria")
+@RequestMapping("/categorias")
 public class CategoriaMemeController {
 
 	private static final Logger logger = LoggerFactory.getLogger(CategoriaMemeController.class);
